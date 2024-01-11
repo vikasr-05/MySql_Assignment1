@@ -14,7 +14,7 @@ VALUES (1, 'Tom Cruise', Null, '2023-01-01', 'Lake Hollywood Park'),
 (3, 'Denzel Washington', 1, '2020-03-03', 'Beverly Hills'),
 (4, 'Morgan Freeman', 2, '2023-04-04', 'Midi-Pyrenees'),
 (5, 'Tom Hanks', 2, '2020-05-05', 'Lie-De-France'),
-(6, 'Chris Hemsworth', 4, '2020-06-06', 'Paris')
+(6, 'Chris Hemsworth', 4, '2020-06-06', 'Paris');
 
 -- Create EmployeeSalary table
 CREATE TABLE EmployeeSalary (
@@ -96,7 +96,7 @@ SELECT EmpId, FullName, ManagerId, DateOfJoining, City, COUNT(*) AS Count
 -- SELECT FullName, COUNT(*)
 FROM EmployeeDetails
 GROUP BY EmpId, FullName, ManagerId, DateOfJoining, City
-HAVING COUNT(*) > 1
+HAVING COUNT(*) > 1;
 
 
 
@@ -108,7 +108,7 @@ FROM (
     SELECT ROW_NUMBER() OVER (ORDER BY EmpId) AS RowNum, EmpId, FullName, ManagerId, DateOfJoining, City
     FROM EmployeeDetails
 ) AS T
-WHERE T.RowNum % 2 = 1
+WHERE T.RowNum % 2 = 1;
 
 
 
